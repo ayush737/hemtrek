@@ -21,3 +21,13 @@ npm start
 ```
 
 For production, replace the JSON store with a managed database and put the admin credentials in the deployment secret manager.
+
+## Docker
+
+Set a secure `ADMIN_PASSWORD` in `docker-compose.yml`, then run:
+
+```powershell
+docker compose up -d --build
+```
+
+The site will be available at `http://localhost:8092`. Enquiries are preserved in the named `hemtrek_data` volume.

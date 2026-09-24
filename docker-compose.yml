@@ -1,0 +1,19 @@
+services:
+  hemtrek:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hemtrek
+    restart: unless-stopped
+    ports:
+      - "8092:4173"
+    environment:
+      NODE_ENV: production
+      PORT: 4173
+      ADMIN_EMAIL: admin@himroutes.in
+      ADMIN_PASSWORD: CHANGE_THIS_PASSWORD
+    volumes:
+      - hemtrek_data:/app/data
+
+volumes:
+  hemtrek_data:
